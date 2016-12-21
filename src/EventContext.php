@@ -9,6 +9,7 @@ class EventContext implements Context
 {
     /**
      * @Given an event
+     * @When an event is created
      */
     public function anEvent()
     {

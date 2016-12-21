@@ -1,5 +1,11 @@
 Feature: update event with audience
 
+  Scenario: create a new event
+    When an event is created
+    Then the cdbxml private attribute of this event is absent
+    And the cdbxml of this event does not contain the category "2.1.3.0.0"
+    And the JSON-LD audience property of this event equals "everyone"
+
   Scenario: update event from audience 'everyone' to audience 'members'
     Given an event
     And the audience of this event is updated to "everyone"
