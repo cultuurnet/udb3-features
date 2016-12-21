@@ -54,4 +54,28 @@ class UDB2Context implements Context
     {
 
     }
+
+    /**
+     * @Given in UDB2 the cdbxml of this event has the following shortdescription:
+     */
+    public function theCdbxmlOfThisEventHasTheFollowingShortdescription(PyStringNode $string)
+    {
+
+    }
+
+    /**
+     * @Given in UDB2 the cdbxml of this event has the following longdescription:
+     */
+    public function theCdbxmlOfThisEventHasTheFollowingLongdescription(PyStringNode $string)
+    {
+
+    }
+
+    /**
+     * @Given in UDB2 the cdbxml of this event has no short description
+     */
+    public function theCdbxmlOfThisEventHasNoShortDescription()
+    {
+
+    }
 }

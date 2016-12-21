@@ -38,4 +38,12 @@ class JsonLdContext implements Context
     {
 
     }
+
+    /**
+     * @Then the JSON-LD description property of this event contains/has the following value for language :langcode:
+     */
+    public function theDescriptionPropertyOfThisEventContainsTheFollowingValueForLanguage($langcode, PyStringNode $string)
+    {
+
+    }
 }

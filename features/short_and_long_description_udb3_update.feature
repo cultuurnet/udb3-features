@@ -1,7 +1,7 @@
 Feature: projection of short and long description in CDBXML.
   @issue-III-1126
   Scenario: strip description with html-tags to a short description of max. 400 characters without HTML-tags and a long description with html-tags for CDBXML.
-    Given an event in UDB3
+    Given an event
     When the description of this event is updated to:
     """
     Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag
@@ -24,13 +24,13 @@ Feature: projection of short and long description in CDBXML.
 
     # linebreaks in UDB3 are saved as \n
 
-    Then the short description in CDBXML equals:
+    Then the cdbxml of this event has the following shortdescription:
     """
     Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag 15 augustus. Op het programma: LIVE MUZIEK (vanaf 16:00 uur) ----------------------------------------------------- * Les Talons Gitans * Bourdon Willie * Carl Durant &amp; The Lost Kings * Cherchez La Femme * One Man Brawl * De Zingende Apen DOORLOPEND (vanaf 12:00 uur) -------------------------------
     """
     # korte beschrijving afkappen zodat deze max 400 karakters bevat (= 396 karakters + " ..."): afkappen op laatste spatie voor de limiet van 396
 
-    And the long description in CDBXML equals:
+    And the cdbxml of this event has the following longdescription:
  	"""
     Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag
     15 augustus. Op het programma:<br>
@@ -54,7 +54,7 @@ Feature: projection of short and long description in CDBXML.
 
   @issue-III-1126
   Scenario: split description to a short description of max. 400 characters without html for CDBXML and a long description.
-    Given an event in UDB3
+    Given an event
     When the description of this event is updated to:
 	"""
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
@@ -87,7 +87,7 @@ Feature: projection of short and long description in CDBXML.
     Nulla tellus mauris, maximus sed faucibus non, egestas quis eros.
     Ut massa purus, luctus non ex tempor, suscipit efficitur mi.
     """
-    Then the short description of this event in CDBXML equals:
+    Then the cdbxml of this event has the following shortdescription:
     """
  	Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris
@@ -98,7 +98,7 @@ Feature: projection of short and long description in CDBXML.
  	"""
     # korte beschrijving afkappen zodat deze max 396 karakters bevat: + ' ...' (= max 400)
 
-    And the long description of this event in CDBXML equals:
+    And the cdbxml of this event has the following longdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris

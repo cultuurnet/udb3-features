@@ -3,7 +3,7 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: remove repetition of short description in long description for events ONLY when FULL short description is equal to the first part of long description.
     Given an event in UDB2
-    And this event has the following short description:
+    And in UDB2 the cdbxml of this event has the following shortdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris
@@ -13,7 +13,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     nullam.
     """
 
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris
@@ -47,7 +47,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6">UiTinVlaanderen.be</a></p>
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals:
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris
@@ -94,7 +94,7 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: merge short description and long description when short description is not repeated in long description for events.
     Given an event in UDB2
-    And this event has the following short description:
+    And in UDB2 the cdbxml of this event has the following shortdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Donec non velit eu eros eleifend mattis. Mauris
@@ -103,7 +103,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     vestibulum nisi vel nisl elementum, quis faucibus ex dictum
     nullam.
     """
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     Lange Beschrijving - Donec porta molestie arcu, ut tempor odio. Cras mauris nisl,
     rhoncus et tortor id, lobortis ornare libero. Vivamus tellus eros,
@@ -131,7 +131,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6">UiTinVlaanderen.be</a></p>
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals:
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Donec non velit eu eros eleifend mattis. Mauris
@@ -177,14 +177,14 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: merge short description and long description when short description is partly equal to long description
     Given an event in UDB2
-    And this event has the following short description:
+    And in UDB2 the cdbxml of this event has the following shortdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Donec non velit eu eros eleifend mattis. En deze tekst
     verschilt duidelijk van de lange beschrijving dus dit mag niet
     gestript worden!
     """
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit: Donec non velit eu eros eleifend mattis. Mauris
@@ -218,7 +218,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6">UiTinVlaanderen.be</a></p>
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals:
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Donec non velit eu eros eleifend mattis. En deze tekst
@@ -262,8 +262,8 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: use long description when there is no short description in UDB2
     Given an event in UDB2
-    And this event has no short description
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has no short description
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     Lange Beschrijving -  Vivamus neque nulla, tristique at porta non,
     sodales non orci. Aenean vehicula aliquam ipsum, ut faucibus lacus
@@ -282,7 +282,7 @@ Feature: import shortdescription and longdescription to description in UDB3
     <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6">UiTinVlaanderen.be</a></p>
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     Lange Beschrijving -  Vivamus neque nulla, tristique at porta non,
     sodales non orci. Aenean vehicula aliquam ipsum, ut faucibus lacus
@@ -307,16 +307,16 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: merge short description and long description when short description is partly equal to long description and keep HTML of long description
     Given an event in UDB2
-    And this event has the following short description:
+    And in UDB2 the cdbxml of this event has the following shortdescription:
     """
     Vleermuizen zijn top!
     """
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     &lt;p style="text-align: center;"&gt;&lt;a class="btn" href="#Inschrijven" target="_self"&gt;Schrijf je hier in!&lt;/a&gt;&lt;br&gt;&lt;br&gt;Al sinds jaar en dag worden vleermuizen geassocieerd met duistere en duivelse machten.&amp;nbsp; De geheimzinnige, nachtelijke levenswijze van de vleermuizen zal hier zeker voor iets tussen zitten.&amp;nbsp; Bij het invallen van de duisternis verschijnen ze, en fladderen ze vervaarlijk dicht om je heen.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Tijdens deze basiscursus bestuderen we de vleermuizen van naderbij en leren zo hun boeiende wereld kennen.&amp;nbsp; We bespreken de algemene kenmerken, de soorten en de waarnemingen van de inlandse vleermuizen. Ook het leren werken met de batdetector komt aan bod.&lt;/p&gt;&lt;p&gt;Kortom, de ideale cursus voor wie zijn eerste passen wil zetten in de fascinerende wereld van de vleermuizen.&lt;/p&gt;&lt;p style="margin-bottom: 0cm; line-height: 150%;"&gt;&lt;strong&gt;Voor deze activiteit kan je online inschrijven (zie deze pagina onderaan). Na de digitale confirmatie kan het gepaste bedrag overgeschreven worden op rekening BE37 0015 0901 2428 t.n.v. Natuurpunt Averbode Bos &amp;amp; Heide met vermelding van 'cursus vleermuizen' en desgevallend je lidnummer.&lt;br&gt;&lt;a name="Inschrijven"&gt;&lt;/a&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals:
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     Vleermuizen zijn top!\n\n<p style=\"text-align: center;\"><a class=\"btn\" href=\"#Inschrijven\" target=\"_self\">Schrijf je hier in!<\/a><br><br>\nAl sinds jaar en dag worden vleermuizen geassocieerd met duistere en duivelse machten.  De geheimzinnige, nachtelijke levenswijze van de vleermuizen zal hier zeker voor iets tussen zitten.  Bij het invallen van de duisternis verschijnen ze, en fladderen ze vervaarlijk dicht om je heen. <\/p>\n<p>Tijdens deze basiscursus bestuderen we de vleermuizen van naderbij en leren zo hun boeiende wereld kennen.  We bespreken de algemene kenmerken, de soorten en de waarnemingen van de inlandse vleermuizen. Ook het leren werken met de batdetector komt aan bod.<\/p>\n<p>Kortom, de ideale cursus voor wie zijn eerste passen wil zetten in de fascinerende wereld van de vleermuizen.<\/p>\n<p style=\"margin-bottom: 0cm; line-height: 150%;\"><strong>Voor deze activiteit kan je online inschrijven (zie deze pagina onderaan). Na de digitale confirmatie kan het gepaste bedrag overgeschreven worden op rekening BE37 0015 0901 2428 t.n.v. Natuurpunt Averbode\nBos &amp; Heide met vermelding van 'cursus vleermuizen' en desgevallend je lidnummer.<br><a name=\"Inschrijven\" id=\"Inschrijven\"><\/a> <\/strong><\/p>
     """
@@ -327,16 +327,16 @@ Feature: import shortdescription and longdescription to description in UDB3
   @issue-III-165
   Scenario: remove repetition of short description in long description for events ONLY when FULL short description is equal to the first part of long description and keep HTML of long description
     Given an event in UDB2
-    And this event has the following short description:
+    And in UDB2 the cdbxml of this event has the following shortdescription:
     """
     Vertelavond met Jan Gabriëls, voorzitter van de Likona vogelwerkgroep: Belevenissen van vroeger en nu ...Wil je meeluisteren, geef een seintje aan natuurpunt.genk@hotmail.com en we reserveren alvast een plaatsje en drankje voor u.Bijdrage aan deze avond: leden Natuurpunt 3 € – niet leden 5 €
     """
-    And this event has the following long description:
+    And in UDB2 the cdbxml of this event has the following longdescription:
     """
     &lt;p&gt;Vertelavond met Jan Gabriëls, voorzitter van de Likona vogelwerkgroep: Belevenissen van vroeger en nu ...&lt;/p&gt;&lt;p&gt;Wil je meeluisteren, geef een seintje aan &lt;a href="mailto:natuurpunt.genk@hotmail.com" target="_self"&gt;natuurpunt.genk@hotmail.com&lt;/a&gt; en we reserveren alvast een plaatsje en drankje voor u.&lt;/p&gt;&lt;p&gt;Bijdrage aan deze avond: leden Natuurpunt 3 € – niet leden 5 €&lt;/p&gt;
     """
     When this event is imported in UDB3
-    Then the description of this event in UDB3 equals
+    Then the JSON-LD description property of this event contains the following value for language "nl":
     """
     <p>Vertelavond met Jan Gabriëls, voorzitter van de Likona vogelwerkgroep: Belevenissen van vroeger en nu ...<\/p> <p>Wil je meeluisteren, geef een seintje aan <a href=\"mailto:natuurpunt.genk@hotmail.com\" target=\"_self\">natuurpunt.genk@hotmail.com<\/a> en we reserveren alvast een plaatsje en drankje voor u.<\/p>\n<p>Bijdrage aan deze avond: leden Natuurpunt 3 € – niet leden 5 €<\/p>
     """

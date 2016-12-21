@@ -3,23 +3,23 @@
 namespace CultuurNet\UDB3Features;
 
 use Behat\Behat\Context\Context;
+use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 
 class CdbXmlContext implements Context
 {
     /**
-     * @Then the cdbxml private property of this event equals :arg1
+     * @Then the cdbxml private attribute of this event equals :arg1
      */
-    public function theCdbxmlPrivatePropertyOfThisEventEquals($arg1)
+    public function theCdbxmlPrivateAttributeOfThisEventEquals($arg1)
     {
 
     }
 
     /**
-     * @Then the cdbxml private property of this event is removed
-     * @Then the cdbxml private property of this event is missing
+     * @Then the cdbxml private attribute of this event is removed/absent
      */
-    public function theCdbxmlPrivatePropertyOfThisEventIsRemoved()
+    public function theCdbxmlPrivateAttributeOfThisEventIsRemoved()
     {
 
     }
@@ -33,9 +33,25 @@ class CdbXmlContext implements Context
     }
 
     /**
-     * @Then the cdbxml of this event does not contain the category :arg1
+     * @Then the cdbxml of this event does not contain the category :catid
      */
-    public function theCdbxmlOfThisEventDoesNotContainTheCategory($arg1)
+    public function theCdbxmlOfThisEventDoesNotContainTheCategory($catid)
+    {
+
+    }
+
+    /**
+     * @Then the cdbxml of this event has the following shortdescription:
+     */
+    public function theCdbxmlOfThisEventHasTheFollowingShortdescription(PyStringNode $string)
+    {
+
+    }
+
+    /**
+     * @Then the cdbxml of this event has the following longdescription:
+     */
+    public function theCdbxmlOfThisEventHasTheFollowingLongdescription(PyStringNode $string)
     {
 
     }
