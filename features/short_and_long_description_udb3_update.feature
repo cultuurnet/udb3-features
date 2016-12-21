@@ -1,41 +1,8 @@
 Feature: projection of short and long description in CDBXML.
   @issue-III-1126
-  Scenario: strip description to a short description of max. 400 characters for CDBXML whitout HTML-tags.
-    Given an event
-    When I changed the description to
-    """
-    Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag 15 augustus. Op het programma:\n
-    LIVE MUZIEK (vanaf 16:00 uur)\n
-    -----------------------------------------------------\n
-    * Les Talons Gitans\n
-    * Bourdon Willie\n
-    * Carl Durant &amp; The Lost Kings\n
-    * Cherchez La Femme\n
-    * One Man Brawl\n
-    * De Zingende Apen\n\n
-    DOORLOPEND (vanaf 12:00 uur)\n
-    -----------------------------------------------------\n
-    * springkasteel, rad van fortuin kinderanimatie, muziekworkshop,...\n
-    * lekkere hapjes en frisse drankjes aan democratische prijzen\n
-    * pop-up verrassingsbar met diverse aanbiedingen\n
-    * Repair Café met infomarkt voor een duurzame buurt\n
-    """
-    # linebreaks in UDB3 are saved as \n
-
-    Then the short description in CDBXML should be
-    """
-    Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag 15 augustus. Op het programma: LIVE MUZIEK (vanaf 16:00 uur) ----------------------------------------------------- * Les Talons Gitans * Bourdon Willie * Carl Durant & The Lost Kings * Cherchez La Femme * One Man Brawl * De Zingende Apen DOORLOPEND (vanaf 12:00 uur) --------------------------- ...
-    """
-    # korte beschrijving afkappen zodat deze max 396 karakters bevat: + ' ...' (= max 400)
-    # op laatste leesteken[.|?|!] voor de limiet of laatste spatie voor de limiet?
-
-  Scenario: project description as long description in CDBXML.
-    Given an event
-    And the sameAs value of this event equals:
-    """
-    http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6
-    """
-    When I changed the description to
+  Scenario: strip description with html-tags to a short description of max. 400 characters without HTML-tags and a long description with html-tags for CDBXML.
+    Given an event in UDB3
+    When the description of this event is updated to:
     """
     Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag
     15 augustus. Op het programma:\n
@@ -54,8 +21,17 @@ Feature: projection of short and long description in CDBXML.
     * pop-up verrassingsbar met diverse aanbiedingen\n
     * Repair Café met infomarkt voor een duurzame buurt\n
     """
-    Then the long description in CDBXML should be
+
+    # linebreaks in UDB3 are saved as \n
+
+    Then the short description in CDBXML equals:
     """
+    Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag 15 augustus. Op het programma: LIVE MUZIEK (vanaf 16:00 uur) ----------------------------------------------------- * Les Talons Gitans * Bourdon Willie * Carl Durant &amp; The Lost Kings * Cherchez La Femme * One Man Brawl * De Zingende Apen DOORLOPEND (vanaf 12:00 uur) -------------------------------
+    """
+    # korte beschrijving afkappen zodat deze max 400 karakters bevat (= 396 karakters + " ..."): afkappen op laatste spatie voor de limiet van 396
+
+    And the long description in CDBXML equals:
+ 	"""
     Ook in 2015 houden we weer een feestje in de buurt van de Pieter Coutereelstraat. Deze keer op zaterdag
     15 augustus. Op het programma:<br>
     LIVE MUZIEK (vanaf 16:00 uur)<br>
@@ -72,17 +48,13 @@ Feature: projection of short and long description in CDBXML.
     * lekkere hapjes en frisse drankjes aan democratische prijzen<br>
     * pop-up verrassingsbar met diverse aanbiedingen<br>
     * Repair Café met infomarkt voor een duurzame buurt<br>
-    <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6">UiTinVlaanderen.be</a></p>
+    <p class="uiv-source">Bron: <a href="http://www.uitinvlaanderen.be/agenda/e/title/cdbid">UiTinVlaanderen.be</a></p>
     """
-    # lange bescrhijving is volledige beschrijving van UDB3
+    # lange beschrijving is volledige beschrijving van UDB3
 
   @issue-III-1126
   Scenario: split description to a short description of max. 400 characters without html for CDBXML and a long description.
     Given an event in UDB3
-    And the sameAs value of this event equals:
-    """
-    http://www.uitinvlaanderen.be/agenda/e/een-piano-in-de-tu-n-joodse-rituelen-en-gebruiken/3aee552e-2071-46a1-beff-d73b31718ea6
-    """
     When the description of this event is updated to:
 	"""
     Korte beschrijving - Lorem ipsum dolor sit amet, consectetur
@@ -125,7 +97,6 @@ Feature: projection of short and long description in CDBXML.
     nullam. ...
  	"""
     # korte beschrijving afkappen zodat deze max 396 karakters bevat: + ' ...' (= max 400)
-    # op laatste leesteken[.|?|!] voor de limiet of laatste spatie voor de limiet?
 
     And the long description of this event in CDBXML equals:
     """
