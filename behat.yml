@@ -1,0 +1,8 @@
+default:
+  autoload: vendor/autoload.php
+  suites:
+    default:
+      contexts:
+        - CultuurNet\UDB3Features\EventContext
+        - CultuurNet\UDB3Features\CdbXmlContext
+        - CultuurNet\UDB3Features\JsonLdContext

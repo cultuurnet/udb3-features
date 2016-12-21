@@ -1,0 +1,14 @@
+{
+  "name": "cultuurnet/udb3-features",
+  "description": "Gherkin scenarios for UDB3",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "require": {
+    "behat/behat": "v3.2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "CultuurNet\\UDB3Features\\": "src"
+    }
+  }
+}
