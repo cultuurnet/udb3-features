@@ -3,6 +3,7 @@ default:
   suites:
     default:
       contexts:
+        - CultuurNet\UDB3Features\UDB2Context
         - CultuurNet\UDB3Features\EventContext
         - CultuurNet\UDB3Features\CdbXmlContext
         - CultuurNet\UDB3Features\JsonLdContext
