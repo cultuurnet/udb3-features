@@ -40,6 +40,15 @@ class UDB2Context implements Context
     }
 
     /**
+     * @Given in UDB2 the cdbxml private attribute of this event is absent/missing
+     */
+    public function theCdbxmlPrivateAttributeOfThisEventIsAbsent()
+    {
+
+    }
+
+
+    /**
      * @Given in UDB2 the cdbxml of this event contains a category with catid :arg1
      */
     public function theCdbxmlOfThisEventContainsACategoryWithCatid($arg1)

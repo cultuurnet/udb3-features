@@ -2,7 +2,7 @@ Feature: import UDB2 events with private and/or category
 
   Scenario: import event without value 'private=true' as audience 'everyone'
     Given an event in UDB2
-    And in UDB2 the cdbxml private attribute of this event equals "false"
+    And in UDB2 the cdbxml private attribute of this event is absent
     When this event is imported in UDB3
     Then the JSON-LD audience property of this event equals "everyone"
 
