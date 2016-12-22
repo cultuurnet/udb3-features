@@ -59,8 +59,3 @@ Feature: update event with audience
     Then the cdbxml private attribute of this event equals "true"
     And the cdbxml of this event contains the following categories:
       | <category catid="2.1.3.0.0" type="targetaudience">Scholen</category> |
-
-  Scenario: update event without audience to audience 'everyone'
-    Given an event
-    When the audience of this event is updated to "everyone"
-    Then the cdbxml private attribute of this event is removed
