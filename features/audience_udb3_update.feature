@@ -1,6 +1,6 @@
 Feature: update event with audience
 
-  Scenario: create a new event
+  Scenario: each new event has the audience 'everyone'
     When an event is created
     Then the cdbxml private attribute of this event is absent
     And the cdbxml of this event does not contain the category "2.1.3.0.0"
