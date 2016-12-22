@@ -17,4 +17,4 @@ Feature: import UDB2 events with private and/or category
     And in UDB2 the cdbxml private attribute of this event equals "true"
     And in UDB2 the cdbxml of this event contains a category with catid "2.1.3.0.0"
     When this event is imported in UDB3
-    Then the JSON-LD audience property of this event equals "members"
+    Then the JSON-LD audience property of this event equals "education"
