@@ -33,6 +33,7 @@ Feature: import of contactInfo from UDB2 to UDB3 for event and place
     }
     """
 
+  @issue-III-1728
   Scenario: parse UDB2 contact info format to UDB3 contact and booking info format for place
     Given a place in UDB2
     And in UDB2 the cdbxml of this place has the following contactinfo:
