@@ -1,20 +1,20 @@
 Feature: UDB2 cdbxml agefrom gets projected to JSON-LD typicalAgeRange property.
 
   @issue-III-1637
-  Scenario Outline: upper boundary of typicalAgeRange for agefrom up to 11 becomes 11
+  Scenario Outline: upper boundary of typicalAgeRange for agefrom up to 12 becomes 12
     Given an event in UDB2
     And in UDB2 the cdbxml agefrom attribute of this event equals <agefrom>
     When this event is imported in UDB3
-    Then the JSON-LD typicalAgeRange property of this event equals "<agefrom>-11"
+    Then the JSON-LD typicalAgeRange property of this event equals "<agefrom>-12"
 
     Examples:
       | agefrom |
       | 0       |
       | 3       |
-      | 11      |
+      | 12      |
 
   @issue-III-1637
-  Scenario Outline: upper boundary of typicalAgeRange for agefrom between 12 and 17 becomes 17
+  Scenario Outline: upper boundary of typicalAgeRange for agefrom between 12 and 18 becomes 18
     Given an event in UDB2
     And in UDB2 the cdbxml agefrom attribute of this event equals <agefrom>
     When this event is imported in UDB3
@@ -23,23 +23,23 @@ Feature: UDB2 cdbxml agefrom gets projected to JSON-LD typicalAgeRange property.
     Examples:
       | agefrom |
       | 12      |
-      | 17      |
+      | 18      |
 
   @issue-III-1637
-  Scenario Outline: upper boundary of typicalAgeRange for agefrom higher than 17 becomes 120
+  Scenario Outline: upper boundary of typicalAgeRange for agefrom higher than 18 becomes 99
     Given an event in UDB2
     And in UDB2 the cdbxml agefrom attribute of this event equals <agefrom>
     When this event is imported in UDB3
-    Then the JSON-LD typicalAgeRange property of this event equals "<agefrom>-120"
+    Then the JSON-LD typicalAgeRange property of this event equals "<agefrom>-99"
 
     Examples:
       | agefrom |
-      | 18      |
+      | 19      |
       | 99      |
-      | 120      |
+
 
   @issue-III-1637
-  Scenario Outline: lower boundary of typicalAgeRange for agefrom higher than 120 becomes 120
+  Scenario Outline: lower boundary of typicalAgeRange for agefrom higher than 99 becomes 99
     Given an event in UDB2
     And in UDB2 the cdbxml agefrom attribute of this event equals <agefrom>
     When this event is imported in UDB3
@@ -47,5 +47,6 @@ Feature: UDB2 cdbxml agefrom gets projected to JSON-LD typicalAgeRange property.
 
     Examples:
       | agefrom |
+      | 100     |
       | 121     |
       | 14500   |
