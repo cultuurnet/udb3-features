@@ -7,7 +7,7 @@ Feature: show Cultuurkuur-link on /preview
     And this event is created by him
     And this event has 'education' as audienceType
     And this event has no terms of the domain educationfield or educationlevel
-    Then he sees a row with information 'Toegang 	Voor scholen'
+    Then he sees a row with information 'Toegang 	Specifiek voor scholen'
     And a custom message:
     “””
     Vervolledig dit evenement op cultuurkuur.be met extra informatie voor scholen en leerkrachten.
@@ -22,7 +22,7 @@ Feature: show Cultuurkuur-link on /preview
     And this event is created by him
     And this event has 'education' as audienceType
     And this event has terms of the domains educationfield or educationlevel
-    Then he sees a row with information 'Toegang	Voor scholen'
+    Then he sees a row with information 'Toegang	Specifiek voor scholen'
     And a success-message ‘Dit evenenement bevat extra informatie voor scholen en leerkrachten’
     And a panel with educationfield(s), educationlevel(s) and targetaudience 2.1.14.0.0 Leerlingen and targetaudience 2.1.13.0.0 Leerkrachten
     And a link ‘Wijzig op cultuurkuur.be’ to cultuurkuur.be/event/<cdbid>/edit
