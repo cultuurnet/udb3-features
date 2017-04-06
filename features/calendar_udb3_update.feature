@@ -21,7 +21,7 @@ Scenario: event with one timestamp, start and enddate on same day
     
 
 @issue-III-2032
-Scenario: event with one timestamp, enddate on the next day
+Scenario: event with one timestamp, enddate one day later
  Given an event in UDB3
  When the startDate for this event is set to "%{startDate}"
   And the timeStart for this event is set to "%{timeStart}"
@@ -61,7 +61,7 @@ Scenario: event with multiple timestamps, start and enddate on same day
     
 
 @issue-III-2032
-Scenario: event with multiple timestamps, start and enddate on the next day
+Scenario: event with multiple timestamps, enddate one day later
  Given an event in UDB3
  When the first startDate for this event is set to "%{startDate1}"
   And the first timeStart for this event is set to "%{timeStart1}"
@@ -95,3 +95,45 @@ Scenario: event with one timestamp, enddate more than one day later
     | 9   | 2017-05-25 | 10:00:00  | 2017-05-27 | 16:00:00 |
     | 10  | 2017-06-01 | 00:00:00  | 2017-06-03 | 00:00:00 |
     | 11  | 2017-09-01 | 09:00:00  | 2017-09-10 | 17:30:00 |
+
+@issue-III-2032
+Scenario: event with multiple timestamps, start and enddate more than one day apart
+ Given an event in UDB3
+ When the first startDate for this event is set to "%{startDate1}"
+  And the first timeStart for this event is set to "%{timeStart1}"
+  And the first endDate for this event is set to "%{endDate1}"
+  And the first timeEnd for this event is set to "%{timeEnd1}"
+  And the second startDate for this event is set to "%{startDate2}"
+  And the second timeStart for this event is set to "%{timeStart2}"
+  And the second endDate for this event is set to "%{endDate2}"
+  And the second timeEnd for this event is set to "%{timeEnd2}"
+ Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
+
+  
+ Examples:
+    | nr  | startDate1  | timeStart1 | endDate1    | timeEnd1  | startDate2  | timeStart2 | endDate2    | timeEnd2  |
+    | 12  | 2017-05-25  | 10:00:00   | 2017-05-27  | 16:00:00  | 2017-06-28  | 10:00:00   | 2017-06-30  | 16:00:00  |
+    | 13  | 2017-05-25  | 10:00:00   | 2017-05-27  | 16:00:00  | 2017-05-24  | 10:00:00   | 2017-05-26  | 16:00:00  |
+
+@issue-III-2032
+Scenario: event with multiple timestamps (MIX): start and enddate on the same day, enddate one day later, enddate more than one day later
+ Given an event in UDB3
+ When the first startDate for this event is set to "%{startDate1}"
+  And the first timeStart for this event is set to "%{timeStart1}"
+  And the first endDate for this event is set to "%{endDate1}"
+  And the first timeEnd for this event is set to "%{timeEnd1}"
+  And the second startDate for this event is set to "%{startDate2}"
+  And the second timeStart for this event is set to "%{timeStart2}"
+  And the second endDate for this event is set to "%{endDate2}"
+  And the second timeEnd for this event is set to "%{timeEnd2}"
+  And the third startDate for this event is set to "%{startDate3}"
+  And the third timeStart for this event is set to "%{timeStart3}"
+  And the third endDate for this event is set to "%{endDate3}"
+  And the third timeEnd for this event is set to "%{timeEnd3}"
+ Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
+ 
+ Examples:
+    | nr  | startDate1  | timeStart1 | endDate1    | timeEnd1  | startDate2  | timeStart2 | endDate2    | timeEnd2  | startDate3  | timeStart3 | endDate3    | timeEnd3  |
+    | 14  | 2017-05-25  | 10:00:00   | 2017-05-25  | 16:00:00  | 2017-05-25  | 20:00:00   | 2017-05-26  | 01:00:00  | 2017-06-28  | 10:00:00   | 2017-06-30  | 16:00:00  |
