@@ -1,0 +1,31 @@
+{
+"calendarType": "periodic",
+"startDate": "2017-03-01T00:00:00+01:00",
+"endDate": "2017-03-31T00:00:00+02:00",
+"openingHours": [
+{
+"dayOfWeek": [
+"monday"
+],
+"opens": "08:00",
+"closes": "10:00",
+"opens": "12:00",
+"closes": "14:00",
+"opens": "18:00",
+"closes": "22:00"
+},
+{
+"dayOfWeek": [
+"tuesday"
+],
+"opens": "10:00",
+"closes": "13:00"
+},
+"dayOfWeek": [
+"wednesday"
+],
+"opens": "08:00",
+"closes": "10:00"
+}
+]
+}

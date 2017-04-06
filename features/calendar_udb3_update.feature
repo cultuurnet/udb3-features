@@ -137,3 +137,28 @@ Scenario: event with multiple timestamps (MIX): start and enddate on the same da
  Examples:
     | nr  | startDate1  | timeStart1 | endDate1    | timeEnd1  | startDate2  | timeStart2 | endDate2    | timeEnd2  | startDate3  | timeStart3 | endDate3    | timeEnd3  |
     | 14  | 2017-05-25  | 10:00:00   | 2017-05-25  | 16:00:00  | 2017-05-25  | 20:00:00   | 2017-05-26  | 01:00:00  | 2017-06-28  | 10:00:00   | 2017-06-30  | 16:00:00  |
+    
+@issue-III-2032
+Scenario: periodic event with one set of openinghours
+ Given an event in UDB3
+ When the startDate for this event is set to "%{startDate}"
+  And the endDate for this event is set to "%{endDate}"
+  And the first set of openinghours are set to "%{dayOfWeek}" from "%{opens} to "%{closes}"
+ 
+ Examples:
+    | nr  | startDate  | endDate    | dayOfWeek   | opens  | closes  |
+    | 15  | 2017-09-01 | 2017-12-31 | mo          | 08:00  | 10:00   |
+
+@issue-III-2032
+Scenario: periodic event with multiple sets of openinghours
+ Given an event in UDB3
+ When the startDate for this event is set to "%{startDate}"
+  And the endDate for this event is set to "%{endDate}"
+  And the first set of openinghours are set to "%{dayOfWeek1}" from "%{opens1} to "%{closes1}"
+  And the second set of openinghours are set to "%{dayOfWeek2}" from "%{opens2} to "%{closes2}"
+  And the third set of openinghours are set to "%{dayOfWeek3}" from "%{opens3} to "%{closes3}"
+  And the fourth set of openinghours are set to "%{dayOfWeek4}" from "%{opens4} to "%{closes4}"
+ 
+ Examples:
+    | nr  | startDate  | endDate    | dayOfWeek1  | opens1 | closes1 | dayOfWeek2  | opens2 | closes2 | dayOfWeek3  | opens3 | closes3 | dayOfWeek4  | opens4 | closes4 |
+    | 16  | 2017-03-01 | 2017-03-31 | mo, we      | 08:00  | 10:00   | mo          | 12:00  | 14:00   | mo          | 18:00  | 22:00   | tu          | 10:00  | 13:00   |

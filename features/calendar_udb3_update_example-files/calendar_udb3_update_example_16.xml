@@ -1,0 +1,24 @@
+<calendar>
+<periods>
+<period>
+<datefrom>2017-03-01</datefrom>
+<dateto>2017-03-31</dateto>
+<weekscheme>
+<monday opentype="open">
+<openingtime from="08:00:00" to="10:00:00"/>
+<openingtime from="12:00:00" to="14:00:00"/>
+<openingtime from="18:00:00" to="22:00:00"/>
+</monday>
+<tuesday opentype="open">
+<openingtime from="10:00:00" to="13:00:00"/>
+</tuesday>
+<wednesday opentype="open">
+<openingtime from="08:00:00" to="10:00:00"/>
+<thursday opentype="closed"/>
+<friday opentype="closed"/>
+<saturday opentype="closed"/>
+<sunday opentype="closed"/>
+</weekscheme>
+</period>
+</periods>
+</calendar>
