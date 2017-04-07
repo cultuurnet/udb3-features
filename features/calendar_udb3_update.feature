@@ -154,10 +154,10 @@ Scenario: periodic event with multiple sets of openinghours
  Given an event in UDB3
  When the startDate for this event is set to "%{startDate}"
   And the endDate for this event is set to "%{endDate}"
-  And the first set of openinghours are set to "%{dayOfWeek1}" from "%{opens1} to "%{closes1}"
-  And the second set of openinghours are set to "%{dayOfWeek2}" from "%{opens2} to "%{closes2}"
-  And the third set of openinghours are set to "%{dayOfWeek3}" from "%{opens3} to "%{closes3}"
-  And the fourth set of openinghours are set to "%{dayOfWeek4}" from "%{opens4} to "%{closes4}"
+  And the first set of openinghours are set to "%{dayOfWeek1}" from "%{opens1}" to "%{closes1}"
+  And the second set of openinghours are set to "%{dayOfWeek2}" from "%{opens2}" to "%{closes2}"
+  And the third set of openinghours are set to "%{dayOfWeek3}" from "%{opens3}" to "%{closes3}"
+  And the fourth set of openinghours are set to "%{dayOfWeek4}" from "%{opens4}" to "%{closes4}"
  
  Examples:
     | nr  | startDate  | endDate    | dayOfWeek1  | opens1 | closes1 | dayOfWeek2  | opens2 | closes2 | dayOfWeek3  | opens3 | closes3 | dayOfWeek4  | opens4 | closes4 |

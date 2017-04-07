@@ -1,10 +1,12 @@
-"calendarType": "single",
-"startDate": "2017-07-15T20:00:00+02:00",
-"endDate": "2017-07-15T23:00:00+02:00",
-"subEvent": [
 {
-"@type": "Event",
-"startDate": "2017-07-15T20:00:00+02:00",
-"endDate": "2017-07-15T23:00:00+02:00"
+  "calendarType": "single",
+  "startDate": "2017-07-15T20:00:00+02:00",
+  "endDate": "2017-07-15T23:00:00+02:00",
+  "subEvent": [
+    {
+      "@type": "Event",
+      "startDate": "2017-07-15T20:00:00+02:00",
+      "endDate": "2017-07-15T23:00:00+02:00"
+    }
+  ]
 }
-]
