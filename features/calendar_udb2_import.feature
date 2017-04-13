@@ -242,10 +242,3 @@ Scenario: import permanent event with weekscheme openingtimes from + to
 
 @issue-III-2033
 Scenario: import permanent event with weekscheme mix openingtimes from + to
-
-
-@issue-III-2033
-Scenario: import event with multiple timestamps with specific timeformat as one subevent
-
-@issue-III-2033
-Scenario: import event with multiple timestamps with specific timeformat as multiple subevents
