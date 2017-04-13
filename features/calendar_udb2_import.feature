@@ -11,8 +11,8 @@ Scenario: import event with one timestamp: date, no timestart or timeend
   And the date for this timestamp equals "%{startDate}"
   And timestart and timeend are absent for this timestamp
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
  Examples:
     | nr  | startDate  |
@@ -27,8 +27,8 @@ Scenario: import event with one timestamp: date + timestart, no timeend
   And timestart for this timestamp equals "%{timeStart}"
   And timeend for this timestamp is absent
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
   
  Examples:
@@ -47,8 +47,8 @@ Scenario: import event with one timestamp: date + timestart + timeend
   And timestart for this timestamp equals "%{timeStart}"
   And timeend for this timestamp equals "%{timeEnd}"
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
   
  Examples:
@@ -68,8 +68,8 @@ Scenario: import event with multiple timestamps: dates, no timestart or timeend
   And the date for the third timestamp equals "%{startDate3}"
   And timestart and timeend are absent for all these timestamps
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
  Examples:
     | nr  | startDate1 | startDate2 | startDate3 |
@@ -86,8 +86,8 @@ Scenario: import event with multiple timestamps: dates + timestart, no timeend
   And timestart for the second timestamp equals "%{timeStart2}"
   And timeend for the second timestamp is absent
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
   
  Examples:
@@ -101,13 +101,13 @@ Scenario: import event with multiple timestamps: dates + timestart + timeend
   And this event has multiple timestamps
   And the date for the first timestamp equals "%{startDate1}"
   And timestart for the first timestamp equals "%{timeStart1}"
-  And timeend for the first timestamp is absent
+  And timeend for the first timestamp equals "%{timeEnd1}"
   And the date for the second timestamp equals "%{startDate2}"
   And timestart for the second timestamp equals "%{timeStart2}"
-  And timeend for the second timestamp is absent
+  And timeend for the second timestamp equals "%{timeEnd2}"
  When this event is imported in UDB3
- Then the JSON-LD calendar property of this event equals "calendar_udb3_import_example_%{nr}.json"
-  And the cdbxml calendar property of this event equals "calendar_udb3_import_example_%{nr}.xml"
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
   
  Examples:
