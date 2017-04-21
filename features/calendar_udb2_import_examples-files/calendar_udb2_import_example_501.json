@@ -1,17 +1,17 @@
 {
-"calendarType": "multiple",
-"startDate": "2017-05-21T10:00:00+02:00",
-"endDate": "2017-06-21T10:00:00+02:00",
-"subEvent": [
-{
-"@type": "Event",
-"startDate": "2017-05-21T10:00:00+02:00",
-"endDate": "2017-05-21T10:00:00+02:00"
-},
-{
-"@type": "Event",
-"startDate": "2017-06-21T10:00:00+02:00",
-"endDate": "2017-06-21T10:00:00+02:00"
-}
-]
+  "calendarType": "multiple",
+  "startDate": "2017-05-21T10:00:00+02:00",
+  "endDate": "2017-06-21T10:00:00+02:00",
+  "subEvent": [
+    {
+      "@type": "Event",
+      "startDate": "2017-05-21T10:00:00+02:00",
+      "endDate": "2017-05-21T10:00:00+02:00"
+    },
+    {
+      "@type": "Event",
+      "startDate": "2017-06-21T10:00:00+02:00",
+      "endDate": "2017-06-21T10:00:00+02:00"
+    }
+  ]
 }

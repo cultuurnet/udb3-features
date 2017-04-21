@@ -1,19 +1,19 @@
 <calendar>
-<periods>
-<period>
-<datefrom>2017-09-01</datefrom>
-<dateto>2017-12-31</dateto>
-<weekscheme>
-<monday opentype="open">
-<openingtime from="08:00:00" to="10:00:00"/>
-</monday>
-<tuesday opentype="closed"/>
-<wednesday opentype="closed"/>
-<thursday opentype="closed"/>
-<friday opentype="closed"/>
-<saturday opentype="closed"/>
-<sunday opentype="closed"/>
-</weekscheme>
-</period>
-</periods>
+    <periods>
+        <period>
+            <datefrom>2017-09-01</datefrom>
+            <dateto>2017-12-31</dateto>
+            <weekscheme>
+                <monday opentype="open">
+                    <openingtime from="08:00:00" to="10:00:00"/>
+                </monday>
+                <tuesday opentype="closed"/>
+                <wednesday opentype="closed"/>
+                <thursday opentype="closed"/>
+                <friday opentype="closed"/>
+                <saturday opentype="closed"/>
+                <sunday opentype="closed"/>
+            </weekscheme>
+        </period>
+    </periods>
 </calendar>

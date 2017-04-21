@@ -1,27 +1,27 @@
 <calendar>
-<timestamps>
-<timestamp>
-<date>2017-05-21</date>
-<timestart>10:00:00</timestart>
-<timeend>16:00:00</timeend>
-</timestamp>
-<timestamp>
-<date>2017-05-21</date>
-<timestart>20:00:00</timestart>
-<timeend>01:00:00</timeend>
-</timestamp>
-<timestamp>
-<date>2017-06-23</date>
-<timestart>10:00:01</timestart>
-</timestamp>
-<timestamp>
-<date>2017-06-24</date>
-<timestart>00:00:01</timestart>
-</timestamp>
-<timestamp>
-<date>2017-06-25</date>
-<timestart>00:00:01</timestart>
-<timeend>16:00:00</timeend>
-</timestamp>
-</timestamps>
+    <timestamps>
+        <timestamp>
+            <date>2017-05-21</date>
+            <timestart>10:00:00</timestart>
+            <timeend>16:00:00</timeend>
+        </timestamp>
+        <timestamp>
+            <date>2017-05-21</date>
+            <timestart>20:00:00</timestart>
+            <timeend>01:00:00</timeend>
+        </timestamp>
+        <timestamp>
+            <date>2017-06-23</date>
+            <timestart>10:00:01</timestart>
+        </timestamp>
+        <timestamp>
+            <date>2017-06-24</date>
+            <timestart>00:00:01</timestart>
+        </timestamp>
+        <timestamp>
+            <date>2017-06-25</date>
+            <timestart>00:00:01</timestart>
+            <timeend>16:00:00</timeend>
+        </timestamp>
+    </timestamps>
 </calendar>

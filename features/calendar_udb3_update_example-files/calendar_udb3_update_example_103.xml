@@ -1,9 +1,9 @@
 <calendar>
-<timestamps>
-<timestamp>
-<date>2017-07-15</date>
-<timestart>20:00:00</timestart>
-<timeend>23:00:00</timeend>
-</timestamp>
-</timestamps>
+    <timestamps>
+        <timestamp>
+            <date>2017-07-15</date>
+            <timestart>20:00:00</timestart>
+            <timeend>23:00:00</timeend>
+        </timestamp>
+    </timestamps>
 </calendar>

@@ -1,14 +1,14 @@
 {
-"calendarType": "periodic",
-"startDate": "2017-09-01T00:00:00+02:00",
-"endDate": "2017-12-31T23:59:59+01:00",
-"openingHours": [
-{
-"dayOfWeek": [
-"monday"
-],
-"opens": "08:00",
-"closes": "10:00"
-}
-]
+  "calendarType": "periodic",
+  "startDate": "2017-09-01T00:00:00+02:00",
+  "endDate": "2017-12-31T23:59:59+01:00",
+  "openingHours": [
+    {
+      "dayOfWeek": [
+        "monday"
+      ],
+      "opens": "08:00",
+      "closes": "10:00"
+    }
+  ]
 }
