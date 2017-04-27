@@ -221,15 +221,68 @@ Scenario: import event with multiple timestamps: mixed: dates with or without ti
 
 @issue-III-2033
 Scenario: import event with period: datefrom + dateto, no weekscheme
+ Given an event in udb2
+  And this event has calendartype period
+  And datefrom for this event equals "%{startDate}"
+  And dateto for this event equals "%{endDate}"
+  And weekscheme for this event is absent
+ When this event is imported in UDB3
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
+  
+ Examples:
+    | nr   | startDate  | endDate    |
+    | 1101 | 2017-09-01 | 2017-12-31 |
 
 @issue-III-2033
 Scenario: import event with period: datefrom + dateto + weekscheme only openingtimes from
+Given an event in udb2
+  And this event has calendartype period
+  And datefrom for this event equals "%{startDate}"
+  And dateto for this event equals "%{endDate}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}"
+  And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}"
+ When this event is imported in UDB3
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
+
+
+ Examples:
+    | nr   | startDate  | endDate    | dayOfWeek1     | opens1 | dayOfWeek2  | opens2 |
+    | 1201 | 2017-09-01 | 2017-12-31 | mo,thu,fri,sat | 20:30  | sun         | 16:00  |
+    
 
 @issue-III-2033
 Scenario: import event with period: datefrom + dateto + weekscheme openingtimes from + to
+Given an event in udb2
+  And this event has calendartype period
+  And datefrom for this event equals "%{startDate}"
+  And dateto for this event equals "%{endDate}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}" to "%{closes2}"
+ When this event is imported in UDB3
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
+  
+Examples:
+   | nr   | startDate  | endDate    | dayOfWeek1     | opens1 | closes1 | dayOfWeek2  | opens2 | closes2 |
+   | 1301 | 2017-09-01 | 2017-12-31 | mo,thu,fri,sat | 20:30  | 22:30   | sun         | 16:00  | 20:00   |
 
 @issue-III-2033
 Scenario: import event with period: datefrom + dateto + weekscheme mix openingtimes from + to
+Given an event in udb2
+  And this event has calendartype period
+  And datefrom for this event equals "%{startDate}"
+  And dateto for this event equals "%{endDate}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}"
+ When this event is imported in UDB3
+ Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
+  
+Examples:
+   | nr   | startDate  | endDate    | dayOfWeek1     | opens1 | closes1 | dayOfWeek2  | opens2 |
+   | 1401 | 2017-09-01 | 2017-12-31 | mo,thu,fri,sat | 20:30  | 22:30   | sun         | 16:00  |
 
 @issue-III-2033
 Scenario: import permanent event, no weekscheme as periodic event
