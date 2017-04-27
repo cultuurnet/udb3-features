@@ -1,0 +1,22 @@
+{
+  "calendarType": "permanent",
+  "openingHours": [
+    {
+      "dayOfWeek": [
+        "monday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "opens": "20:30",
+      "closes": "22:30"
+    },
+    {
+      "dayOfWeek": [
+        "sunday"
+      ],
+      "opens": "16:00",
+      "closes": "20:00"
+    }
+  ]
+}
