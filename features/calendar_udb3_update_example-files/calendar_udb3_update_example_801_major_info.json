@@ -1,0 +1,14 @@
+{
+  "calendarType": "periodic",
+  "startDate": "2017-08-31T22:00:00.000Z",
+  "endDate": "2017-12-30T23:00:00.000Z",
+  "openingHours": [
+    {
+      "dayOfWeek": [
+        "monday"
+      ],
+      "opens": "08:00",
+      "closes": "10:00"
+    }
+  ]
+}

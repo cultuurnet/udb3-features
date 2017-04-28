@@ -1,0 +1,14 @@
+{
+  "calendarType": "single",
+  "timestamps": [
+    {
+      "date": "2017-08-31T22:00:00.000Z",
+      "startHour": "09:00",
+      "startHourAsDate": "2017-09-01T07:00:00.000Z",
+      "showStartHour": true,
+      "endHour": "17:30",
+      "endHourAsDate": "2017-09-10T15:30:00.000Z",
+      "showEndHour": true
+    }
+  ]
+}

@@ -8,7 +8,8 @@ Scenario: event with one timestamp, start and enddate on same day
   And the timeStart for this event is set to "%{timeStart}"
   And the endDate for this event is set to "%{endDate}"
   And the timeEnd for this event is set to "%{timeEnd}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -26,7 +27,8 @@ Scenario: event with one timestamp, enddate one day later
   And the timeStart for this event is set to "%{timeStart}"
   And the endDate for this event is set to "%{endDate}"
   And the timeEnd for this event is set to "%{timeEnd}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -50,7 +52,8 @@ Scenario: event with multiple timestamps, start and enddate on same day
   And the third timeStart for this event is set to "%{timeStart3}"
   And the third endDate for this event is set to "%{endDate3}"
   And the third timeEnd for this event is set to "%{timeEnd3}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -70,7 +73,8 @@ Scenario: event with multiple timestamps, enddate one day later
   And the second timeStart for this event is set to "%{timeStart2}"
   And the second endDate for this event is set to "%{endDate2}"
   And the second timeEnd for this event is set to "%{timeEnd2}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -85,7 +89,8 @@ Scenario: event with one timestamp, enddate more than one day later
   And the timeStart for this event is set to "%{timeStart}"
   And the endDate for this event is set to "%{endDate}"
   And the timeEnd for this event is set to "%{timeEnd}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -106,7 +111,8 @@ Scenario: event with multiple timestamps, start and enddate more than one day ap
   And the second timeStart for this event is set to "%{timeStart2}"
   And the second endDate for this event is set to "%{endDate2}"
   And the second timeEnd for this event is set to "%{timeEnd2}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
 
@@ -130,7 +136,8 @@ Scenario: event with multiple timestamps (MIX): start and enddate on the same da
   And the third timeStart for this event is set to "%{timeStart3}"
   And the third endDate for this event is set to "%{endDate3}"
   And the third timeEnd for this event is set to "%{timeEnd3}"
- Then the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
   And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
  Examples:
@@ -143,6 +150,9 @@ Scenario: periodic event with one set of openinghours
  When the startDate for this event is set to "%{startDate}"
   And the endDate for this event is set to "%{endDate}"
   And the first set of openinghours are set to "%{dayOfWeek}" from "%{opens} to "%{closes}"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
  Examples:
     | nr  | startDate  | endDate    | dayOfWeek   | opens  | closes  |
@@ -157,6 +167,9 @@ Scenario: periodic event with multiple sets of openinghours
   And the second set of openinghours are set to "%{dayOfWeek2}" from "%{opens2}" to "%{closes2}"
   And the third set of openinghours are set to "%{dayOfWeek3}" from "%{opens3}" to "%{closes3}"
   And the fourth set of openinghours are set to "%{dayOfWeek4}" from "%{opens4}" to "%{closes4}"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+  And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+  And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
 
  Examples:
     | nr  | startDate  | endDate    | dayOfWeek1  | opens1 | closes1 | dayOfWeek2  | opens2 | closes2 | dayOfWeek3  | opens3 | closes3 | dayOfWeek4  | opens4 | closes4 |
