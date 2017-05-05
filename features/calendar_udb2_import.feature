@@ -258,7 +258,7 @@ Scenario: import event with period: datefrom + dateto + weekscheme openingtimes 
   And this event has calendartype period
   And datefrom for this event equals "%{startDate}"
   And dateto for this event equals "%{endDate}"
-  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to "%{closes1}"
   And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}" to "%{closes2}"
  When this event is imported in UDB3
  Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
@@ -274,7 +274,7 @@ Scenario: import event with period: datefrom + dateto + weekscheme mix openingti
   And this event has calendartype period
   And datefrom for this event equals "%{startDate}"
   And dateto for this event equals "%{endDate}"
-  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to "%{closes1}"
   And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}"
  When this event is imported in UDB3
  Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
@@ -315,7 +315,7 @@ Scenario: import permanent event with weekscheme only openingtimes from
 Scenario: import permanent event with weekscheme openingtimes from + to
  Given an event in udb2
   And this event has calendartype permanent
-  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to "%{closes1}"
   And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}" to "%{closes2}"
  When this event is imported in UDB3
  Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
@@ -329,7 +329,7 @@ Examples:
 Scenario: import permanent event with weekscheme mix openingtimes from + to
  Given an event in udb2
   And this event has calendartype permanent
-  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to ""%{closes1}"
+  And the weekscheme for this event contains "%{dayOfWeek1}" from "%{opens1}" to "%{closes1}"
   And the weekscheme for this event contains "%{dayOfWeek2}" from "%{opens2}"
  When this event is imported in UDB3
  Then the JSON-LD calendar property of this event equals "calendar_udb2_import_example_%{nr}.json"
