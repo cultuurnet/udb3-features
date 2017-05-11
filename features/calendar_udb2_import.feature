@@ -187,7 +187,7 @@ Scenario: import event with multiple timestamps with specific timeformat as mult
 
  Examples:
     | nr  | calendartype | startDate1 | timeStart1 | startDate2 | timeStart2 | startDate3 | timeStart3 | timeEnd3 | startDate4 | timeStart4 | startDate5 | timeStart5 | startDate6 | timeStart6 | timeEnd6 |
-    | 901 | timestamps   | 2017-05-21 | 10:00:01   | 2017-05-22 | 00:00:01   | 2017-05-23 | 00:00:01   | 16:00:00 | 2017-06-24 | 10:00:01   | 2017-06-25 | 00:00:01   | 2017-06-26 | 00:00:01   | 16:00:00 |
+    | 901 | timestamps   | 2017-05-21 | 10:00:01   | 2017-05-22 | 00:00:01   | 2017-05-23 | 00:00:01   | 16:00:00 | 2017-06-24 | 10:00:02   | 2017-06-25 | 00:00:02   | 2017-06-26 | 00:00:02   | 16:00:00 |
  
  
 @issue-III-2033
