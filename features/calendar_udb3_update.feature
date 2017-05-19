@@ -174,3 +174,19 @@ Scenario: periodic event with multiple sets of openinghours
  Examples:
     | nr  | startDate  | endDate    | dayOfWeek1  | opens1 | closes1 | dayOfWeek2  | opens2 | closes2 | dayOfWeek3  | opens3 | closes3 | dayOfWeek4  | opens4 | closes4 |
     | 901 | 2017-03-01 | 2017-03-31 | mo, we      | 08:00  | 10:00   | mo          | 12:00  | 14:00   | mo          | 18:00  | 22:00   | tu          | 10:00  | 13:00   |
+
+@issue-III-2126
+Scenario: event with one timestamp, last all day
+ Given an event in UDB3
+ When the startDate for this event is set to "%{startDate}"
+ And the timeStart for this event is set to "%{timeStart}"
+ And the endDate for this event is set to "%{endDate}"
+ And the timeEnd for this event is set to "%{timeEnd}"
+ Then the calendar part of major info equals "calendar_udb3_update_example_%{nr}_major_info.json"
+ And the JSON-LD calendar property of this event equals "calendar_udb3_update_example_%{nr}.json"
+ And the cdbxml calendar property of this event equals "calendar_udb3_update_example_%{nr}.xml"
+
+
+Examples:
+| nr   | startDate  | timeStart | endDate    | timeEnd  |
+| 1001 | 2017-05-25 | all day   | 2017-05-25 | all day  |
