@@ -138,7 +138,7 @@ Scenario: import event with multiple timestamps: mixed: dates, with or without t
 
 
 @issue-III-2033
-Scenario: import event with multiple timestamps with specific timeformat as one subevent
+Scenario: import event with multiple timestamps with specific timeformat as calendarType single
  Given an event in udb2
   And this event has multiple timestamps
   And the date for the first timestamp equals "%{startDate1}"
@@ -155,8 +155,10 @@ Scenario: import event with multiple timestamps with specific timeformat as one 
   And the cdbxml calendar property of this event equals "calendar_udb2_import_example_%{nr}.xml"
 
  Examples:
-    | nr  | calendartype | startDate1 | timeStart1 | startDate2 | timeStart2 | startDate3 | timeStart3 | timeEnd3 |
-    | 801 | timestamps   | 2017-05-21 | 10:00:01   | 2017-05-22 | 00:00:01   | 2017-05-23 | 00:00:01   | 16:00:00 |
+    | nr  | calendartype | startDate1 | timeStart1 | startDate2 | timeStart2 | timeEnd2 | startDate3 | timeStart3 | timeEnd3 |
+    | 801 | timestamps   | 2017-05-21 | 10:00:01   | 2017-05-22 | 00:00:01   | EMPTY    | 2017-05-23 | 00:00:01   | 16:00:00 |
+    | 802 | timestamps   | 2017-07-20 | 20:00:01   | 2017-07-21 | 00:00:01   | 20:00:00 |
+    | 803 | timestamps   | 2017-07-20 | 20:00:01   | 2017-07-21 | 00:00:01   | 21:00:00 |
 
 
 @issue-III-2033
