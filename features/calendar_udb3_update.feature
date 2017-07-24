@@ -36,6 +36,8 @@ Scenario: event with one timestamp, enddate one day later
     | nr  | startDate  | timeStart | endDate    | timeEnd  |
     | 201 | 2017-05-26 | 21:00:00  | 2017-05-27 | 02:00:00 |
     | 202 | 2018-03-27 | 00:00:00  | 2018-03-28 | 00:00:00 |
+    | 203 | 2017-07-20 | 20:00:00  | 2017-07-21 | 20:00:00 |
+    | 204 | 2017-07-20 | 20:00:00  | 2017-07-21 | 21:00:00 |
 
 @issue-III-2032
 Scenario: event with multiple timestamps, start and enddate on same day
