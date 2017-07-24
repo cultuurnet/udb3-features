@@ -11,14 +11,14 @@
         "saturday"
       ],
       "opens": "20:30",
-      "closes": "20:30"
+      "closes": “23:59”
     },
     {
       "dayOfWeek": [
         "sunday"
       ],
       "opens": "16:00",
-      "closes": "16:00"
+      "closes": “23:59”
     }
   ]
 }

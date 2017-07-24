@@ -3,7 +3,7 @@
         <timestamp>
             <date>2017-06-03</date>
             <timestart>09:30:00</timestart>
-            <timeend>09:30:00</timeend>
+            <timeend>23:59:00</timeend>
         </timestamp>
     </timestamps>
 </calendar>
